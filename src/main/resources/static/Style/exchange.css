@@ -1,0 +1,124 @@
+body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      padding: 30px 14px;
+
+    }
+
+    .exchange{
+        margin: 20px auto;
+        max-width: 500px;
+    }
+
+
+    /* Top Controls */
+    .swap-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+
+    .swap-nav button {
+      background: var(--accent);
+  color: var(--accent-dark);
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .swap-nav img{
+        width: 40px;
+        border-radius: 50%;
+        border: 2px solid var(--accent);
+    }
+
+    .swap-nav button:hover {
+      transform: translateY(-3px);
+    }
+
+    .swap-nav span {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    /* Swap Box */
+    .swap-box {
+      background: var(--bg-secondery);
+      padding: 20px;
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 18px var(--shadow);
+    }
+
+    label {
+      font-size: 14px;
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text-muted);
+      
+    }
+
+    .coinSwap{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+    }
+    select {
+      max-width:30%;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+       background: var(--bg-secondary);
+      color: var(--text);
+      outline: none;
+      margin-bottom: 18px;
+      cursor: pointer;
+    }
+
+    .amount-input  {
+  width: 20%;
+  padding: 10px 14px;
+  background: var(--bg-secondary);
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  color: var(--text);
+  outline: none;
+  text-align: right;
+}
+
+.amount-input::-webkit-inner-spin-button,
+.amount-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.amount-input {
+  -moz-appearance: textfield;
+}
+
+.swap-btn {
+  width: 100%;
+  background: var(--accent);
+  color: var(--accent);
+  font-weight: bold;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  margin-top: 10px;
+}
+
+.swap-btn:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+}

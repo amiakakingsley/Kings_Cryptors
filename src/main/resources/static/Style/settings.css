@@ -1,0 +1,155 @@
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: "Segoe UI", sans-serif;
+  color: var(--text);
+  padding: 30px 14px;
+}
+
+.settings-container {
+  max-width: 390px;
+  margin: 0 auto;
+}
+
+       .topBtn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.topBtn button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.topBtn img {
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+}
+
+.topBtn h1 {
+  font-size: 20px;
+  color: var(--accent);
+  margin-right: 250px;
+}
+
+h1 {
+  color: #00ffcc;
+  margin-bottom: 5px;
+}
+
+.sub {
+  color: var(--text-muted);
+  margin-bottom: 25px;
+}
+
+/* Settings Panel */
+.settings-box {
+   background: var(--bg-secondary);
+  padding: 20px;
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+ box-shadow: 0 0 18px var(--shadow);
+  margin-bottom: 25px;
+}
+
+.settings-box h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+ color: var(--accent);
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+}
+
+input, select {
+  width: 90%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--table-alt);
+  color: var(--text);
+  margin-bottom: 18px;
+  outline: none;
+}
+
+/* Toggle Switch */
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.switch input {
+  display: none;
+}
+
+.switch {
+  position: relative;
+  width: 44px;
+  height: 22px;
+  display: inline-block;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+   background: var(--table-hover);
+  border-radius: 22px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+   background: var(--accent);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+   background: var(--accent);
+}
+
+input:checked + .slider::before {
+  transform: translateX(22px);
+}
+
+/* Save Button */
+.save-btn, .userUpdateBtn, .userRegistrationBtn {
+  width: 100%;
+  padding: 12px;
+  background: #00ffcc;
+  color: #0d1117;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.25s ease;
+}
+.userUpdateBtn{
+  width: 40%;
+}
+
+.save-btn:hover, .userUpdateBtn, .userRegistrationBtn {
+  background: #00e6b8;
+  transform: translateY(-3px);
+}

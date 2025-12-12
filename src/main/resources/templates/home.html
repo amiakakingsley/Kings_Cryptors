@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${botName} + ' Dashboard'">KingsCryptos Dashboard</title>
+    <link rel="stylesheet" th:href="@{/Style/general.css}">
+    <link rel="stylesheet" th:href="@{/Style/dashboard.css}">
+    <link rel="stylesheet" th:href="@{/Style/transaction.css}">
+    <link rel="stylesheet" th:href="@{/Style/exchange.css}">
+    <link rel="stylesheet" th:href="@{/Style/settings.css}">
+
+</head>
+
+<body>
+  
+    </div>
+
+    <div class="displaySection">
+          <!-- DASHBOARD PAGE -->
+    <section style="display:block;" id="dashboardSection" class="main">
+
+
+        <header>
+            <div class="headerMenu">
+                <h1 th:text="'Welcome to ' + ${botName}">Welcome to KingsCryptos</h1>
+                <p>Your personal crypto signal and market tracking assistant.</p>
+            </div>
+            <div id="login">
+                <a id="LoginLink" href="#" onclick="showPage('logInSection')" class="nav-item">
+            <span class="label">Login</span>
+            </a>
+            </div>
+            
+           
+
+        </header>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Bot Status</h3>
+                <p th:text="${botStatus}">🟢 Online</p>
+            </div>
+            <div class="card">
+                <h3>Active Users</h3>
+                <p th:text="${activeUsers}">128</p>
+            </div>
+            <div class="card">
+                <h3>Messages Sent</h3>
+                <p th:text="${messagesSent}">2,340</p>
+            </div>
+        </div>
+
+        <div class="market">
+    <h2>Crypto Market Overview</h2>
+    <table id="coinTable">
+        <thead>
+            <tr>
+                <th>Coin</th>
+                <th>Price</th>
+                <th>Change</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+
+
+
+    </section>
+
+    <!-- TRANSACTION PAGE -->
+    <section id="transactionSection" class="main" style="display:none;">
+
+        <div class="wallet-container">
+
+            <!-- Balance Display -->
+            <div class="balance-card">
+                <div class="topBtn">
+                    <h2>Wallet Balance</h2>
+                </div>
+
+
+                <h1>$12,450.87</h1>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="swapBtn">Swap</button>
+                <button class="sendBtn">Send</button>
+            </div>
+            <h2>Transactions</h2>
+            <!-- Transaction List -->
+            <div class="transactions-list">
+
+
+
+                <div class="transaction-item">
+                    <div class="transaction-details">
+                        <strong>Received USDT</strong>
+                        <span>Today · 2:45 PM</span>
+                    </div>
+                    <div class="transaction-amount">+250 USDT</div>
+                </div>
+
+                <div class="transaction-item">
+                    <div class="transaction-details">
+                        <strong>Sent BTC</strong>
+                        <span>Yesterday · 9:21 AM</span>
+                    </div>
+                    <div class="transaction-amount">-0.0034 BTC</div>
+                </div>
+
+                <div class="transaction-item">
+                    <div class="transaction-details">
+                        <strong>Swapped ETH → SOL</strong>
+                        <span>Feb 21 · 7:11 PM</span>
+                    </div>
+                    <div class="transaction-amount">Swap</div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Exchange PAGE -->
+    <section id="exchangeSection" class="main" style="display:none;">
+        <div class="exchange">
+            <!-- Top Controls -->
+            <div class="swap-nav">
+                <a th:href="@{/dashboard}">
+                    <img th:src="@{/images/back.jpg}" alt="home"></a>
+                <h1>Exchange</h1>
+                <button style="background-color: yellow; color: black;">Buy</button>
+            </div>
+
+            <!-- Swap Form -->
+            <div class="swap-box">
+
+                <label for="baseCoin">From (Base Coin)</label>
+                <div class="coinSwap">
+                    <select id="baseCoin">
+                        <option>BTC</option>
+                        <option>ETH</option>
+                        <option>USDT</option>
+                        <option>SOL</option>
+                        <option>BNB</option>
+                    </select>
+
+                    <input type="number" placeholder="0.00" class="amount-input">
+
+                </div>
+
+                <label for="targetCoin">To (Receive Coin)</label>
+                <div class="coinSwap">
+                    <select id="baseCoin">
+                        <option>BTC</option>
+                        <option>ETH</option>
+                        <option>USDT</option>
+                        <option>SOL</option>
+                        <option>BNB</option>
+                    </select>
+
+                    <input type="number" placeholder="0.00" class="amount-input">
+
+                </div>
+
+
+            </div>
+            <button style="color: black;" class="swap-btn">Swap</button>
+        </div>
+    </section>
+
+    <!-- SETTINGS PAGE -->
+    <section id="settingsSection" class="main" style="display:none;">
+        <div class="settings-container">
+            <div class="balance-card">
+                <div class="topBtn">
+                    <h1>Settings</h1>
+                </div>
+
+                <p style="text-align: left;" class="sub">Customize your experience</p>
+
+                <!-- Profile Section -->
+                <div class="settings-box">
+                    <h3>Profile</h3>
+
+                    <form >
+                    <label style="text-align: left;">Display Name</label>
+                    <input type="text" id="" placeholder="Enter your display name" required>
+
+                    <label style="text-align: left;">Email</label>
+                    <input type="email" placeholder="user@example.com" id="" required>
+
+                    <label style="text-align: left;">Password</label>
+                    <input type="password" placeholder="password" id="" required>
+
+                    <button class="userUpdateBtn">submit</button>
+                    </form>
+                    
+
+                </div>
+
+                 <!-- Reset Password Section -->
+                <div class="settings-box">
+                    <h3>Reset Password</h3>
+
+                    <label style="text-align: left;">Enter New Password</label>
+                    <input type="text" placeholder="Enter Password">
+
+                    <label style="text-align: left;">Comfirm password</label>
+                    <input type="email" placeholder="Comfirm password">
+
+                </div>
+
+                <!-- Notification Section -->
+                <div class="settings-box">
+                    <h3>Notifications</h3>
+
+                    <div class="setting-row">
+                        <span>Price Alerts</span>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="setting-row">
+                        <span>Daily Market Summary</span>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                </div>
+
+                <!-- Theme Section -->
+                <div class="settings-box">
+                    <h3>Appearance</h3>
+
+                    <div class="setting-row">
+                        <span>Dark Mode</span>
+                        <button id="theme-toggle">Toggle-Theme</button>
+                    </div>
+                </div>
+
+
+                <button id="logoutBtn" class="save-btn">Sign Out</button>
+
+            </div>
+        </div>
+    </section>
+    
+     <!--Registration Section-->
+      <section id="RegisterSection" class="main" style="display:none;">
+                <!-- Profile Section -->
+                <div class="settings-box">
+                      <div style="display: flex; justify-content: space-between; align-items: center;" class="topBtn">
+                    <h5>Already Have an Account </h5>
+                    <a style="text-align: right; "  href="#" onclick="showPage('logInSection')" class="nav-item">
+                <span class="label">Login</span>
+                </a>
+                </div>
+                    <h3 style="text-align: center;">Register</h3>
+
+                    <form >
+                    <label style="text-align: left;">Display Name</label>
+                    <input type="text" id="userName" placeholder="Enter your display name" required>
+
+                    <label style="text-align: left;">Email</label>
+                    <input type="email" placeholder="user@example.com" id="email" required>
+
+                    <label style="text-align: left;">Password</label>
+                    <input type="password" placeholder="password" id="password" required>
+
+                    <p>By clicking submit, you agree to our <a href="#">Policy</a></p>
+
+                    <button style="width: 100%;" class="userRegistrationBtn">Submit</button>
+                    </form>
+                </div>
+    </section>
+
+    <!--Login Section-->
+    <section id="logInSection" class="main" style="display:none;">
+                <!-- Profile Section -->
+                <div class="settings-box">
+                      <div style="display: flex; justify-content: space-between; align-items: center;" class="topBtn">
+                    <h5>Not Registered? </h5>
+                    <a style="text-align: right; "  href="#" onclick="showPage('RegisterSection')" class="nav-item">
+                <span class="label">Register</span>
+                </a>
+                </div>
+                    <h3 style="text-align: center;">Login</h3>
+
+                    <form id="logInForm">
+
+                    <label style="text-align: left;">Email</label>
+                    <input type="email" placeholder="user@example.com" id="Loginemail" required>
+
+                    <label style="text-align: left;">Password</label>
+                    <input type="password" placeholder="password" id="loginpassword" required>
+
+
+                    <button style="width: 100%;" id="logInFormBtn" class="UserloginLogin">Login</button>
+                    </form>
+                </div>
+    </section>
+
+
+    <section class="downBtnsection">
+
+  <nav class="bottom-nav">
+    <a href="#" onclick="showPage('dashboardSection')" class="nav-item">
+      <span class="icon">🏠</span>
+      <span class="label">Home</span>
+    </a>
+
+    <a href="#" onclick="showPage('transactionSection')" class="nav-item">
+      <span class="icon">💰</span>
+      <span class="label">Transactions</span>
+    </a>
+
+    <a href="#" onclick="showPage('exchangeSection')" class="nav-item">
+      <span class="icon">🔄</span>
+      <span class="label">Exchange</span>
+    </a>
+ 
+    <a href="#" onclick="showPage('settingsSection')" class="nav-item">
+      <span class="icon">⚙️</span>
+      <span class="label">Settings</span>
+    </a>
+  </nav>
+
+    </section>
+
+
+    </div>
+    </div>
+    </div>
+
+   
+    <script  th:src="@{/PublicJavaScriptURL/themeSelect.js}"></script>
+    <script th:src="@{/PublicJavaScriptURL/coinAutofetch.js}"></script>
+    <script th:src="@{/PublicJavaScriptURL/userhandler.js}"></script>
+</body>
+ 
+</html>

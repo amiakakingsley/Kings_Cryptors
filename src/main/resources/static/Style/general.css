@@ -1,0 +1,84 @@
+
+/* Dark mode (default) */
+:root {
+  --bg: #0d1117;
+  --bg-secondary: #070707;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --accent: #00ffcc;
+  --accent-dark: #0d1117;
+  --shadow: rgba(0, 255, 204, 0.1);
+  --shadow-hover: rgba(0, 255, 204, 0.2);
+  --table-alt: #1b222c;
+  --table-hover: #21262d;
+}
+
+
+/* Light Mode */
+.light {
+  --bg: #f3f4f6;
+  --bg-secondary: #ffffff;
+  --text: #111;
+  --text-muted: #555;
+  --accent: #00b8a3;
+  --accent-dark: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-hover: rgba(0, 0, 0, 0.2);
+  --table-alt: #efefef;
+  --table-hover: #e2e2e2;
+}
+
+/* Apply theme colors globally */
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.downBtnsection {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--shadow);
+  z-index: 1000;
+}
+
+/* The nav bar container */
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 0;
+}
+
+/* Each nav item */
+.bottom-nav .nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  text-decoration: none;
+  font-size: 13px;
+  color: var(--text-muted);
+  transition: 0.3s ease;
+}
+
+/* Icons look cleaner and spaced */
+.bottom-nav .nav-item .icon {
+  font-size: 20px;
+}
+
+/* Active / hover */
+.bottom-nav .nav-item:hover,
+.bottom-nav .nav-item.active {
+  color: var(--accent);
+}
+
+/* Make sure page content is not hidden behind the bar */
+.page, .main {
+  padding-bottom: 70px;
+}

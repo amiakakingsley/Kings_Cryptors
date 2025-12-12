@@ -1,0 +1,142 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  min-height: 100vh;
+}
+
+
+/* ====== Main Section ====== */
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+
+header h1 {
+ color: var(--accent);
+  margin-bottom: 10px;
+}
+
+header p {
+  color: var(--text-muted);
+}
+
+/* ====== Cards Section ====== */
+.cards {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+
+}
+
+.card {
+  background-color: var(--accent);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px var(--shadow);
+  transition: transform 0.3s ease;
+  width: flex 1;
+  transition: 0.7s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+box-shadow: 0 0 20px var(--shadow-hover);
+background-color: var(--accent);
+}
+
+.card h3{
+  color: var(--table-alt);
+}
+
+/* ====== Market Table ====== */
+.market {
+  margin-top: 40px;
+}
+
+.market h2 {
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+   background: var(--bg-secondary);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: var(--accent);
+  color: var(--accent-dark);
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+background-color: var(--table-alt);
+}
+
+tr:hover {
+  background-color: var(--table-hover);
+}
+
+/* ====== Footer ====== */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #8b949e;
+  font-size: 0.9em;
+}
+ 
+
+
+
+/* ====== Mobile Responsiveness ====== */
+@media (max-width: 900px) {
+  .sidebar {
+    position: fixed;
+    transform: translateX(-100%);
+    transition: transform 0.7s ease;
+    width: 80%;
+    left: 0;
+    top: 0;
+ 
+  }
+
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+ 
+
+  
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .cards h3{
+     font-size: 14px;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+}
+
+/* ====== Mobile Menu Button ====== *

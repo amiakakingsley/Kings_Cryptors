@@ -1,0 +1,130 @@
+  body {  
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 30px 10px;
+    }
+
+    .wallet-container {
+      width: 100%;
+      max-width: 420px;
+    }
+
+    /* Balance Card */
+    .balance-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+      padding: 28px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 0 22px var(--accent-shadow, rgba(0, 255, 204, 0.15));
+
+    }
+
+    .balance-card h2 {
+      margin: 0;
+      font-size: 15px;
+      box-shadow: 0 0 22px var(--accent-shadow, rgba(0, 255, 204, 0.15));
+
+    }
+
+    .balance-card h1 {
+      margin-top: 8px;
+      font-size: 36px;
+       color: var(--accent);
+    }
+
+        .topBtn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.topBtn button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.topBtn img {
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+}
+
+.topBtn h2 {
+  font-size: 20px;
+  color: var(--accent);
+  margin: 0px 60px;
+}
+
+    /* Action Buttons */
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin: 22px 0;
+    }
+
+    .action-buttons button {
+      flex: 1;
+      padding: 14px 0;
+      background: var(--accent);
+      border: none;
+      border-radius: 8px;
+      color: var(--bg-color);
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.25s;
+    }
+
+    .action-buttons button:hover {
+      transform: translateY(-4px);
+    }
+
+    /* Transactions List */
+    .transactions-list {
+        display: flex;
+        flex-direction: column;
+      margin-top: 16px;
+     
+      
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+      
+    }
+
+    .transaction-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      padding: 16px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.06);
+      transition: background 0.25s;
+      border-radius: 12px;
+     
+      
+    }
+
+    .transaction-item:hover {
+      background: rgba(255, 255, 255, 0.10);
+    }
+
+    .transaction-details strong {
+      display: block;
+      font-size: 15px;
+    }
+
+    .transaction-details span {
+      font-size: 13px;
+       color: var(--text-muted, #8b949e);
+    }
+
+    .transaction-amount {
+      font-weight: bold;
+      color: var(--accent);
+    }
