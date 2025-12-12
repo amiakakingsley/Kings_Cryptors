@@ -36,7 +36,7 @@ public class KingsCryptos extends TelegramLongPollingBot {
 
                 InlineKeyboardButton webAppButton = new InlineKeyboardButton();
                 webAppButton.setText("View DashBoard");
-                webAppButton.setWebApp(new WebAppInfo("https://denisse-notchy-nonadjustably.ngrok-free.dev/home"));
+                webAppButton.setWebApp(new WebAppInfo(""));
 
                 InlineKeyboardMarkup ketMarkup = new InlineKeyboardMarkup();
                 ketMarkup.setKeyboard(List.of(List.of(webAppButton)));
